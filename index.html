@@ -46,7 +46,7 @@
 <meta name="ICBM" content="19.2813, 72.8713">
 
 <!-- ═══════════════════════════════════════════════════
-     STRUCTURED DATA — LocalBusiness
+     STRUCTURED DATA — EducationalOrganization + Reviews
 ═══════════════════════════════════════════════════ -->
 <script type="application/ld+json">
 {
@@ -165,7 +165,8 @@
       "@type": "Review",
       "reviewRating": {
         "@type": "Rating",
-        "ratingValue": "5"
+        "ratingValue": "5",
+        "bestRating": "5"
       },
       "author": {
         "@type": "Person",
@@ -177,20 +178,34 @@
       "@type": "Review",
       "reviewRating": {
         "@type": "Rating",
-        "ratingValue": "5"
+        "ratingValue": "5",
+        "bestRating": "5"
       },
       "author": {
         "@type": "Person",
         "name": "Neha Sharma"
       },
       "reviewBody": "The F&O course is unlike anything I found on YouTube. Practical, structured, and taught with real trade examples."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Rohan Gupta"
+      },
+      "reviewBody": "Amit Sir's algo course automated my entire strategy. I now run 3 bots that trade while I sleep. Best investment I ever made."
     }
   ]
 }
 </script>
 
 <!-- ═══════════════════════════════════════════════════
-     STRUCTURED DATA — FAQ (boosts "People Also Ask")
+     STRUCTURED DATA — FAQ
 ═══════════════════════════════════════════════════ -->
 <script type="application/ld+json">
 {
@@ -202,7 +217,7 @@
       "name": "Where are ProfitMax share market classes located?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "ProfitMax Share Market Classes is located at 2nd Floor, Sunrise Complex, Mira Road (East), Mumbai – 401107, near Mira Road Railway Station, Maharashtra."
+        "text": "ProfitMax Share Market Classes is located at B1 Ground Floor, Chandra Vihar Chs, Sheetal Nagar, Mira Road (East), Mumbai – 401107, near Mira Road Railway Station, Maharashtra."
       }
     },
     {
@@ -226,7 +241,7 @@
       "name": "Is there a free demo class available?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, ProfitMax offers a free demo class every Saturday at our Mira Road center. You can book your seat by calling +91 98765 43210 or filling out the enquiry form on our website."
+        "text": "Yes, ProfitMax offers a free demo class every Saturday at our Mira Road center. You can book your seat by calling +91 98334 43103 or filling out the enquiry form on our website."
       }
     },
     {
@@ -280,7 +295,7 @@
 </script>
 
 <!-- ═══════════════════════════════════════════════════
-     STRUCTURED DATA — WebSite (Sitelinks Search Box)
+     STRUCTURED DATA — WebSite
 ═══════════════════════════════════════════════════ -->
 <script type="application/ld+json">
 {
@@ -299,7 +314,6 @@
 <!-- Fonts & Favicon -->
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="images/logo.png">
-<!-- Preconnect for performance (helps Core Web Vitals / SEO) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -329,12 +343,8 @@
 
   /* ─── NAV ─── */
   nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+    display: flex; align-items: center; justify-content: space-between;
     padding: 14px 5%;
     background: rgba(6,10,15,0.92);
     backdrop-filter: blur(12px);
@@ -342,8 +352,7 @@
   }
   .nav-logo { display: flex; align-items: center; gap: 12px; }
   .logo-icon {
-    width: 42px; height: 42px;
-    background: var(--gold);
+    width: 42px; height: 42px; background: var(--gold);
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     display: flex; align-items: center; justify-content: center;
     font-family: 'Bebas Neue'; color: #000; font-size: 18px; font-weight: 900;
@@ -352,10 +361,7 @@
   .logo-text .brand { font-family: 'Bebas Neue'; font-size: 22px; color: var(--gold); letter-spacing: 2px; }
   .logo-text .sub { font-size: 10px; color: var(--muted); letter-spacing: 3px; text-transform: uppercase; }
   .nav-links { display: flex; gap: 32px; }
-  .nav-links a {
-    color: var(--muted); text-decoration: none; font-size: 14px;
-    font-weight: 600; letter-spacing: 1px; text-transform: uppercase; transition: color 0.2s;
-  }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; transition: color 0.2s; }
   .nav-links a:hover { color: var(--gold); }
   .nav-cta {
     background: var(--gold); color: #000; border: none; padding: 10px 22px;
@@ -367,11 +373,7 @@
   .nav-cta:hover { background: #ffd055; }
 
   /* ─── HERO ─── */
-  #hero {
-    min-height: 100vh; padding-top: 70px;
-    display: grid; place-items: center;
-    position: relative; overflow: hidden;
-  }
+  #hero { min-height: 100vh; padding-top: 70px; display: grid; place-items: center; position: relative; overflow: hidden; }
   .hero-bg {
     position: absolute; inset: 0;
     background:
@@ -395,26 +397,14 @@
   .hero-badge::before { content: '▲'; font-size: 10px; }
   .hero-title {
     font-family: 'Bebas Neue'; font-size: clamp(52px, 10vw, 110px);
-    line-height: 0.92; letter-spacing: 3px;
-    animation: fadeUp 0.8s 0.15s ease both;
+    line-height: 0.92; letter-spacing: 3px; animation: fadeUp 0.8s 0.15s ease both;
   }
   .hero-title .gold { color: var(--gold); }
   .hero-title .outline { -webkit-text-stroke: 2px var(--gold); color: transparent; }
-  .hero-tagline {
-    font-size: clamp(14px, 2.5vw, 20px); color: var(--muted);
-    letter-spacing: 4px; text-transform: uppercase; margin: 18px 0 10px;
-    animation: fadeUp 0.8s 0.25s ease both;
-  }
-  .hero-location {
-    font-family: 'Share Tech Mono', monospace; font-size: 13px;
-    color: var(--gold); letter-spacing: 2px; margin-bottom: 40px;
-    animation: fadeUp 0.8s 0.35s ease both;
-  }
+  .hero-tagline { font-size: clamp(14px, 2.5vw, 20px); color: var(--muted); letter-spacing: 4px; text-transform: uppercase; margin: 18px 0 10px; animation: fadeUp 0.8s 0.25s ease both; }
+  .hero-location { font-family: 'Share Tech Mono', monospace; font-size: 13px; color: var(--gold); letter-spacing: 2px; margin-bottom: 40px; animation: fadeUp 0.8s 0.35s ease both; }
   .hero-location::before { content: '📍 '; }
-  .hero-stats {
-    display: flex; justify-content: center; gap: clamp(20px, 5vw, 60px);
-    margin-bottom: 48px; animation: fadeUp 0.8s 0.45s ease both; flex-wrap: wrap;
-  }
+  .hero-stats { display: flex; justify-content: center; gap: clamp(20px, 5vw, 60px); margin-bottom: 48px; animation: fadeUp 0.8s 0.45s ease both; flex-wrap: wrap; }
   .hstat { text-align: center; }
   .hstat-num { font-family: 'Bebas Neue'; font-size: clamp(36px, 6vw, 60px); color: var(--gold); line-height: 1; }
   .hstat-label { font-size: 11px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; margin-top: 4px; }
@@ -436,11 +426,7 @@
     transition: all 0.2s; text-decoration: none; display: inline-block;
   }
   .btn-outline:hover { background: rgba(255,184,0,0.1); transform: translateY(-2px); }
-  .scroll-indicator {
-    position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
-    display: flex; flex-direction: column; align-items: center; gap: 8px;
-    animation: fadeUp 1s 1s ease both;
-  }
+  .scroll-indicator { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; animation: fadeUp 1s 1s ease both; }
   .scroll-indicator span { font-size: 10px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; }
   .scroll-line { width: 1px; height: 50px; background: linear-gradient(to bottom, var(--gold), transparent); animation: scrollPulse 2s ease-in-out infinite; }
   @keyframes scrollPulse { 0%,100%{opacity:0.3} 50%{opacity:1} }
@@ -448,10 +434,7 @@
 
   /* ─── SECTIONS ─── */
   section { padding: 90px 5%; }
-  .section-label {
-    font-size: 11px; letter-spacing: 4px; color: var(--gold); text-transform: uppercase;
-    margin-bottom: 12px; display: flex; align-items: center; gap: 12px;
-  }
+  .section-label { font-size: 11px; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
   .section-label::before { content: ''; display: block; width: 30px; height: 1px; background: var(--gold); }
   .section-title { font-family: 'Bebas Neue'; font-size: clamp(36px, 6vw, 64px); line-height: 1; letter-spacing: 2px; margin-bottom: 16px; }
   .section-title .gold { color: var(--gold); }
@@ -459,18 +442,10 @@
 
   /* ─── EXPERIENCE ─── */
   #experience { background: var(--bg2); position: relative; overflow: hidden; }
-  #experience::before {
-    content: '20'; position: absolute; right: -2%; top: -10%;
-    font-family: 'Bebas Neue'; font-size: 40vw; color: rgba(255,184,0,0.02);
-    line-height: 1; pointer-events: none;
-  }
+  #experience::before { content: '20'; position: absolute; right: -2%; top: -10%; font-family: 'Bebas Neue'; font-size: 40vw; color: rgba(255,184,0,0.02); line-height: 1; pointer-events: none; }
   .exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; max-width: 1200px; margin: 0 auto; }
   .exp-features { display: flex; flex-direction: column; gap: 24px; margin-top: 32px; }
-  .exp-feature {
-    display: flex; gap: 18px; align-items: flex-start; padding: 20px;
-    background: rgba(255,184,0,0.04); border: 1px solid var(--border);
-    border-left: 3px solid var(--gold); transition: all 0.3s;
-  }
+  .exp-feature { display: flex; gap: 18px; align-items: flex-start; padding: 20px; background: rgba(255,184,0,0.04); border: 1px solid var(--border); border-left: 3px solid var(--gold); transition: all 0.3s; }
   .exp-feature:hover { background: rgba(255,184,0,0.08); transform: translateX(4px); }
   .exp-icon { font-size: 28px; line-height: 1; flex-shrink: 0; }
   .exp-feature h4 { font-size: 16px; font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
@@ -645,7 +620,6 @@
 
   <div class="hero-inner">
     <div class="hero-badge"><span class="pulse" aria-hidden="true"></span>Live Trading Classes — Mira Road, Mumbai</div>
-    <!-- H1 is keyword-rich and matches primary search intent -->
     <h1 class="hero-title">
       <span class="gold">PROFIT</span><span class="outline">MAX</span><br>
       Share Market<br>
@@ -945,43 +919,77 @@
   <p class="section-sub">Real results from real students who joined our <strong>stock market classes near Mira Road</strong> and transformed their financial lives.</p>
 
   <div class="testimonials-grid">
+
+    <!-- ✅ REVIEW 1 — FIXED: itemReviewed + reviewRating + author as Person -->
     <div class="testi-card" itemscope itemtype="https://schema.org/Review">
+      <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/EducationalOrganization">
+        <meta itemprop="name" content="ProfitMax Share Market Classes" />
+      </div>
+      <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+        <meta itemprop="ratingValue" content="5" />
+        <meta itemprop="bestRating" content="5" />
+      </div>
       <div class="testi-stars" aria-label="5 stars">★★★★★</div>
       <p class="testi-text" itemprop="reviewBody">After 3 months at ProfitMax, I quit my 9-to-5 and now trade full time. Rajesh Sir's live trading sessions changed my entire perspective on risk management. Best <strong>share market classes</strong> in Mumbai.</p>
       <div class="testi-author">
         <div class="testi-avatar" aria-hidden="true">PJ</div>
         <div>
-          <div class="testi-name" itemprop="author">Prashant Joshi</div>
+          <div class="testi-name" itemprop="author" itemscope itemtype="https://schema.org/Person">
+            <span itemprop="name">Prashant Joshi</span>
+          </div>
           <div class="testi-profit">↑ ₹2.4L profit in first 6 months</div>
         </div>
       </div>
     </div>
+
+    <!-- ✅ REVIEW 2 — FIXED: itemReviewed + reviewRating + author as Person -->
     <div class="testi-card" itemscope itemtype="https://schema.org/Review">
+      <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/EducationalOrganization">
+        <meta itemprop="name" content="ProfitMax Share Market Classes" />
+      </div>
+      <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+        <meta itemprop="ratingValue" content="5" />
+        <meta itemprop="bestRating" content="5" />
+      </div>
       <div class="testi-stars" aria-label="5 stars">★★★★★</div>
       <p class="testi-text" itemprop="reviewBody">The F&amp;O course is unlike anything I found on YouTube. Practical, structured, and taught with real trade examples. The hi-tech trading room access alone is worth joining these <strong>trading classes near me</strong>.</p>
       <div class="testi-author">
         <div class="testi-avatar" aria-hidden="true">NS</div>
         <div>
-          <div class="testi-name" itemprop="author">Neha Sharma</div>
+          <div class="testi-name" itemprop="author" itemscope itemtype="https://schema.org/Person">
+            <span itemprop="name">Neha Sharma</span>
+          </div>
           <div class="testi-profit">↑ Consistent 8% monthly from options</div>
         </div>
       </div>
     </div>
+
+    <!-- ✅ REVIEW 3 — FIXED: itemReviewed + reviewRating + author as Person -->
     <div class="testi-card" itemscope itemtype="https://schema.org/Review">
+      <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/EducationalOrganization">
+        <meta itemprop="name" content="ProfitMax Share Market Classes" />
+      </div>
+      <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+        <meta itemprop="ratingValue" content="5" />
+        <meta itemprop="bestRating" content="5" />
+      </div>
       <div class="testi-stars" aria-label="5 stars">★★★★★</div>
       <p class="testi-text" itemprop="reviewBody">Amit Sir's algo course automated my entire strategy. I now run 3 bots that trade while I sleep. Best investment I ever made — and the best <strong>stock trading classes</strong> I've attended.</p>
       <div class="testi-author">
         <div class="testi-avatar" aria-hidden="true">RG</div>
         <div>
-          <div class="testi-name" itemprop="author">Rohan Gupta</div>
+          <div class="testi-name" itemprop="author" itemscope itemtype="https://schema.org/Person">
+            <span itemprop="name">Rohan Gupta</span>
+          </div>
           <div class="testi-profit">↑ 3 live algo bots running profitably</div>
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
-<!-- FAQ — Boosts "People Also Ask" + voice search -->
+<!-- FAQ -->
 <section id="faq" aria-labelledby="faq-heading">
   <div class="section-label">Common Questions</div>
   <h2 class="section-title" id="faq-heading">FREQUENTLY ASKED <span class="gold">QUESTIONS</span></h2>
@@ -1002,7 +1010,7 @@
     </div>
     <div class="faq-item">
       <div class="faq-q">Is there a free demo class available?</div>
-      <div class="faq-a">Yes! We offer a free demo class every Saturday at our Mira Road center. Call +91 98765 43210 or fill the enquiry form to book your seat. No obligation, no fee.</div>
+      <div class="faq-a">Yes! We offer a free demo class every Saturday at our Mira Road center. Call +91 98334 43103 or fill the enquiry form to book your seat. No obligation, no fee.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">What are the batch timings for your trading classes?</div>
@@ -1063,7 +1071,6 @@
           <small>Weekend batches available</small>
         </div>
       </div>
-      <!-- Google Maps embed placeholder for local SEO -->
       <div style="background:var(--bg2);border:1px solid var(--border);padding:12px;font-size:13px;color:var(--muted);">
         📌 <strong style="color:var(--gold);">Find us on Google Maps</strong><br>
         <span style="font-size:12px;">Search "ProfitMax Share Market Classes Mira Road" on Google Maps for directions.</span>
@@ -1138,7 +1145,6 @@
       <a href="#" aria-label="YouTube" style="width:36px;height:36px;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:16px;text-decoration:none;">▶️</a>
     </div>
   </div>
-  <!-- SEO keyword footer text -->
   <div style="text-align:center;padding:16px 5%;font-size:12px;color:var(--muted);border-top:1px solid var(--border);max-width:1200px;margin:0 auto;line-height:1.8;">
     ProfitMax — Best <a href="#courses" style="color:var(--muted);">Share Market Classes</a> | <a href="#courses" style="color:var(--muted);">Stock Market Courses</a> | <a href="#courses" style="color:var(--muted);">Trading Classes</a> in Mira Road, Mumbai |
     <a href="#courses" style="color:var(--muted);">Stock Trading Classes Near Me</a> | <a href="#courses" style="color:var(--muted);">Share Market Classes Near Me</a>
@@ -1193,7 +1199,6 @@
     q.addEventListener('click', () => {
       const isOpen = a.style.display === 'block';
       document.querySelectorAll('.faq-a').forEach(el => el.style.display = 'none');
-      document.querySelectorAll('.faq-q').forEach(el => el.style.setProperty('--after', '"++"'));
       a.style.display = isOpen ? 'none' : 'block';
     });
   });
