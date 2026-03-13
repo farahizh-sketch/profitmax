@@ -329,6 +329,63 @@
   @keyframes pulsate { 0%{transform:scale(0.8);opacity:1} 100%{transform:scale(2);opacity:0} }
   .count-up { display: inline; }
 
+  /* CENTER PHOTO */
+  #center-photo { padding: 0; background: var(--bg); position: relative; }
+  .center-photo-wrap {
+    position: relative;
+    max-height: 520px;
+    overflow: hidden;
+    display: block;
+  }
+  .center-photo-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    filter: brightness(0.92);
+    transition: transform 0.6s ease;
+  }
+  .center-photo-wrap:hover img { transform: scale(1.02); }
+  .center-photo-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(6,10,15,0.1) 0%, rgba(6,10,15,0.0) 40%, rgba(6,10,15,0.75) 100%);
+    pointer-events: none;
+  }
+  .center-photo-caption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 28px 5%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .center-photo-caption .cap-left { }
+  .center-photo-caption .cap-tag {
+    font-size: 11px; letter-spacing: 4px; color: var(--gold);
+    text-transform: uppercase; margin-bottom: 6px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .center-photo-caption .cap-tag::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gold); }
+  .center-photo-caption h3 {
+    font-family: 'Bebas Neue'; font-size: clamp(24px, 4vw, 44px);
+    color: #fff; letter-spacing: 2px; line-height: 1;
+  }
+  .center-photo-caption .cap-right {
+    display: flex; gap: 20px; flex-wrap: wrap;
+  }
+  .cap-pill {
+    background: rgba(255,184,0,0.15);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: 12px; font-weight: 700; letter-spacing: 2px;
+    padding: 8px 18px; text-transform: uppercase;
+    backdrop-filter: blur(6px);
+  }
+
   @media (max-width: 900px) { .nav-links { gap: 14px; } .nav-links a { font-size: 12px; } }
   @media (max-width: 768px) {
     .exp-grid, .contact-grid { grid-template-columns: 1fr; }
@@ -402,6 +459,31 @@
     </div>
   </div>
   <div class="scroll-indicator" aria-hidden="true"><div class="scroll-line"></div><span>Scroll</span></div>
+</section>
+
+<!-- CENTER PHOTO -->
+<section id="center-photo" aria-label="Profiterz Share Market Classes — Our Mira Road Center">
+  <div class="center-photo-wrap">
+    <img
+      src="profiterz_share_market_classes_mira_road.png"
+      alt="Profiterz Share Market Classes — Our Institute in Mira Road, Mumbai. Stock market courses, trading classes, share market training center."
+      width="1340"
+      height="895"
+      loading="eager"
+    >
+    <div class="center-photo-overlay" aria-hidden="true"></div>
+    <div class="center-photo-caption">
+      <div class="cap-left">
+        <div class="cap-tag">Our Institute</div>
+        <h3>Profiterz — Mira Road's #1<br>Share Market Classes Center</h3>
+      </div>
+      <div class="cap-right">
+        <span class="cap-pill">📍 Mira Road, Mumbai</span>
+        <span class="cap-pill">🕐 Mon–Sat 9AM–8PM</span>
+        <span class="cap-pill">📞 98334 43103</span>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- EXPERIENCE -->
@@ -702,7 +784,7 @@
         <div class="contact-item-icon" aria-hidden="true">✉️</div>
         <div>
           <h4>Email</h4>
-          <p><a href="mailto:info@profiterzclasses.com" style="color:inherit;text-decoration:none;">info@profiterzclasses.com</a></p>
+          <p><a href="/cdn-cgi/l/email-protection#11787f777e5161637e77786574636b727d70626274623f727e7c" style="color:inherit;text-decoration:none;"><span class="__cf_email__" data-cfemail="8ce5e2eae3ccfcfee3eae5f8e9fef6efe0edffffe9ffa2efe3e1">[email&#160;protected]</span></a></p>
           <small>Response within 2 hours</small>
         </div>
       </div>
@@ -797,7 +879,7 @@
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   function animateCount(el) {
     const target = parseInt(el.getAttribute('data-target'));
     const step = target / (2000 / 16);
@@ -829,10 +911,4 @@
     const a = item.querySelector('.faq-a');
     q.addEventListener('click', () => {
       const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-a').style.display = 'none'; });
-      if (!isOpen) { item.classList.add('open'); a.style.display = 'block'; }
-    });
-  });
-</script>
-</body>
-</html>
+     
